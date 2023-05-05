@@ -1,0 +1,80 @@
+---
+// Component Imports
+import Container from '../components/container.astro';
+import Logo from '../components/Logo.astro';
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero.astro';
+import Profile from '../components/Profile.astro';
+import Footer from '../components/Footer.astro';
+
+const menuitems = [
+  {
+    title: 'Features',
+    path: '#',
+    children: [
+      { title: 'Action', path: '/' },
+      { title: 'Another action', path: '#' },
+      { title: 'Dropdown Submenu', path: '#' },
+      { title: '404 Page', path: '/404' },
+    ],
+  },
+  {
+    title: 'Pricing',
+    path: '/pricing',
+  },
+  {
+    title: 'About',
+    path: '/about',
+  },
+  {
+    title: 'Blog',
+    path: '/blog',
+  },
+  {
+    title: 'Contact',
+    path: '/contact',
+  },
+];
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <title>Landing Page</title>
+  </head>
+
+  <body>
+    <Container>
+      <!-- <header class='flex flex-col lg:flex-row justify-between items-center my-6'></header> -->
+      <div class='flow-root'>
+        <div class='float-left'><Logo /></div>
+        <div class='float-right'><Navbar /></div>
+      </div>
+
+      <div>
+        <Hero />
+        <div class='grid place-items-center content-center p4'></div>
+        <div class='grid grid-cols-3 gap-4 my-8 tab-rounded-lg'>
+          <img src='https://placehold.co/350' alt='' />
+          <img src='https://placehold.co/350' alt='' />
+          <img src='https://placehold.co/350' alt='' />
+        </div>
+        <div class='grid grid-cols-5 gap-2 my-8'>
+          <div class=''><Profile /></div>
+          <div class=''><Profile /></div>
+          <div class=''><Profile /></div>
+          <div class=''><Profile /></div>
+          <div class=''><Profile /></div>
+        </div>
+
+        <Footer />
+      </div>
+    </Container>
+  </body>
+</html>
